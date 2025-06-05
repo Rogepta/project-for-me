@@ -4,6 +4,12 @@ import me from '../../assets/photo/me.jpg';
 import LinkItem from '../../components/LinkItem/LinkItem';
 
 export default function SectionAboutDeveloper() {
+  const linkItems = [
+    { href: '#', text: 'Статичный сайт' },
+    { href: '#', text: 'Адаптивный сайт' },
+    { href: '#', text: 'Одностраничное приложение' },
+  ];
+
   return (
     <Section
       colorType='ultralight'
@@ -15,11 +21,11 @@ export default function SectionAboutDeveloper() {
     >
       <div style={{ display: 'flex', gap: '270px', paddingBottom: '100px' }}>
         <div>
-          <h3 className={styles.about_developer_h3}>Даниил</h3>
-          <h4 className={styles.about_developer_h4}>
+          <h3 className={styles.section_about_developer_h3}>Даниил</h3>
+          <h4 className={styles.section_about_developer_h4}>
             Фронтенд-разработчик, 26 лет
           </h4>
-          <p className={styles.about_developer_p}>
+          <p className={styles.section_about_developer_p}>
             Я родился в Старом Осколе, позже переехал в Санкт-Петербург, затем в
             Москву. Сейчас опять живу в своем родном городе. Разработкой начал
             заниматься по совету друга. Мне нравится делать то, где можно сразу
@@ -30,6 +36,7 @@ export default function SectionAboutDeveloper() {
             <a
               style={{ textDecoration: 'none', color: '#000000' }}
               target='_blank'
+              rel='noopener noreferrer'
               href='https://github.com/Rogepta'
             >
               GitHub
@@ -40,12 +47,11 @@ export default function SectionAboutDeveloper() {
           <img className={styles.image} src={me} alt='frontend-developer' />
         </div>
       </div>
-      <p className={styles.about_developer_portfolio}>Портфолио</p>
-      <div>
-        <LinkItem href='#' text='Статичный сайт' />
-        <LinkItem href='#' text='Адаптивный сайт' />
-        <LinkItem href='#' text='Одностраничное приложение' />
-      </div>
+      <p className={styles.section_about_developer_portfolio}>Портфолио</p>
+
+      {linkItems.map((item, index) => (
+        <LinkItem key={index} href={item.href} text={item.text} />
+      ))}
     </Section>
   );
 }
