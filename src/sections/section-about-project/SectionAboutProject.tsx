@@ -2,6 +2,17 @@ import Section from '../../components/section/Section';
 import styles from './SectionAboutProject.module.css';
 
 const AboutProject = () => {
+  const customStylesForBox = {
+    color: '#A0A0A0',
+    fontSize: '14rem',
+    lineHeight: '17rem',
+    letterSpacing: '0px',
+  };
+
+  const customPaddingsForBox = {
+    paddingTop: '9px',
+    paddingBottom: '14px',
+  };
   return (
     <Section
       colorType='ultralight'
@@ -39,9 +50,8 @@ const AboutProject = () => {
         <div
           className={styles.box}
           style={{
-            paddingTop: '9px',
-            paddingBottom: '14px',
             backgroundColor: '#2BE080',
+            ...customPaddingsForBox,
           }}
         >
           1 неделя
@@ -49,35 +59,17 @@ const AboutProject = () => {
         <div
           className={styles.box}
           style={{
-            border: '1px solid white',
-            paddingTop: '9px',
-            paddingBottom: '14px',
             backgroundColor: '#F2F2F2',
+            ...customPaddingsForBox,
           }}
         >
           4 недели
         </div>
 
-        <div
-          className={styles.box}
-          style={{
-            color: '#A0A0A0',
-            fontSize: '14rem',
-            lineHeight: '17rem',
-            letterSpacing: '0px',
-          }}
-        >
+        <div className={styles.box} style={customStylesForBox}>
           Back-end
         </div>
-        <div
-          className={styles.box}
-          style={{
-            color: '#A0A0A0',
-            fontSize: '14rem',
-            lineHeight: '17rem',
-            letterSpacing: '0px',
-          }}
-        >
+        <div className={styles.box} style={customStylesForBox}>
           Front-end
         </div>
       </div>
