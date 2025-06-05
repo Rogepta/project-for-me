@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background-color: #073042;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+html {
+  font-size: 1px;
+}
+
+body {
+  font-size: 16rem;
+}

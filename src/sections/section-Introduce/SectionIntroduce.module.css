@@ -1,0 +1,39 @@
+.introduce_wrapper {
+  padding: 75px 70px 0 70px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 170px);
+}
+
+.introduce_h2 {
+  color: #fff;
+  font-size: 50px;
+  line-height: 64px;
+  letter-spacing: 8px;
+  padding-bottom: 36px;
+}
+
+.introduce_p {
+  color: #fff;
+  opacity: 0.5;
+  font-size: 13rem;
+  line-height: 15rem;
+  opacity: 50%;
+  padding-bottom: 150rem;
+}
+
+.introduce_button {
+  padding: 10px 20px;
+  font-size: 12rem;
+  line-height: 16rem;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.section__content {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}

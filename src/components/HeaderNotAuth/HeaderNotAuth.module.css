@@ -1,0 +1,30 @@
+.header {
+  align-items: center;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .registr_enter {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .button_signup,
+  .button_login {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 8px 20px;
+    border-radius: 3px;
+  }
+
+  .button_login {
+    color: #000000;
+    background-color: #2be080;
+  }
+
+  .button_signup {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

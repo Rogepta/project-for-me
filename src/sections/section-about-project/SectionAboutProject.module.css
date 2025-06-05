@@ -1,0 +1,28 @@
+.about_wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about_wrapper_text {
+  padding-bottom: 110rem;
+}
+
+.about_h3 {
+  font-size: 20rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+  padding-bottom: 26px;
+}
+
+.about_p {
+  font-size: 14rem;
+  line-height: 20rem;
+  letter-spacing: 0%;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
