@@ -18,35 +18,12 @@ export default function SectionTechnologies() {
       paddingSizeType='md'
       title={{ text: 'Технологии', marginBottom: '90px' }}
     >
-      <div
-        style={{
-          textAlign: 'center',
-          display: 'grid',
-          gap: '100rem',
-          paddingBottom: '100px',
-        }}
-      >
+      <div className={styles.section_technologies_wrapper}>
         <div>
-          <h3
-            style={{
-              fontSize: '50rem',
-              lineHeight: '58rem',
-              letterSpacing: '-4%',
-              color: '#000000',
-            }}
-          >
-            7 технологий
-          </h3>
+          <h3 className={styles.section_technologies_h3}>7 технологий</h3>
         </div>
         <div>
-          <p
-            style={{
-              fontSize: '14rem',
-              lineHeight: '20rem',
-              letterSpacing: '-4%',
-              color: '#000000',
-            }}
-          >
+          <p className={styles.section_technologies_p}>
             На курсе веб-разработки мы освоили технологии, которые применили{' '}
             <br /> в дипломном проекте.
           </p>
