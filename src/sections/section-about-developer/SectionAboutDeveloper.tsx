@@ -15,38 +15,11 @@ export default function SectionAboutDeveloper() {
     >
       <div style={{ display: 'flex', gap: '270px', paddingBottom: '100px' }}>
         <div>
-          <h3
-            style={{
-              fontSize: '50px',
-              lineHeight: '58px',
-              letterSpacing: '-4%',
-              color: '#000000',
-              marginBottom: '18px',
-            }}
-          >
-            Даниил
-          </h3>
-          <h4
-            style={{
-              fontSize: '18rem',
-              lineHeight: '20rem',
-              letterSpacing: '0px',
-              color: '#000000',
-              marginBottom: '26px',
-              fontWeight: '500',
-            }}
-          >
+          <h3 className={styles.about_developer_h3}>Даниил</h3>
+          <h4 className={styles.about_developer_h4}>
             Фронтенд-разработчик, 26 лет
           </h4>
-          <p
-            style={{
-              fontSize: '14rem',
-              lineHeight: '22rem',
-              letterSpacing: '0px',
-              color: '#000000',
-              paddingBottom: '100px',
-            }}
-          >
+          <p className={styles.about_developer_p}>
             Я родился в Старом Осколе, позже переехал в Санкт-Петербург, затем в
             Москву. Сейчас опять живу в своем родном городе. Разработкой начал
             заниматься по совету друга. Мне нравится делать то, где можно сразу
@@ -64,25 +37,10 @@ export default function SectionAboutDeveloper() {
           </div>
         </div>
         <div>
-          <img
-            style={{}}
-            className={styles.image}
-            src={me}
-            alt='frontend-developer'
-          />
+          <img className={styles.image} src={me} alt='frontend-developer' />
         </div>
       </div>
-      <p
-        style={{
-          fontSize: '18rem',
-          lineHeight: '20rem',
-          letterSpacing: '0px',
-          color: '#A0A0A0',
-          paddingBottom: '50px',
-        }}
-      >
-        Портфолио
-      </p>
+      <p className={styles.about_developer_portfolio}>Портфолио</p>
       <div>
         <LinkItem href='#' text='Статичный сайт' />
         <LinkItem href='#' text='Адаптивный сайт' />
