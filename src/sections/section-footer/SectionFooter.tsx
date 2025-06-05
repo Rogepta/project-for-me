@@ -5,54 +5,19 @@ export default function SectionFooter() {
   return (
     <Section colorType='ultralight' paddingSizeType='s'>
       <div>
-        <p
-          style={{
-            borderBottom: '1px solid #E8E8E8',
-            paddingBottom: '20px',
-            textAlign: 'center',
-            color: '#A0A0A0',
-            fontSize: '13rem',
-            lineHeight: '100%',
-            letterSpacing: '0px',
-          }}
-        >
+        <p className={styles.section_footer_p}>
           Проект DDD x HEAD of Stary Oskol`s IT
         </p>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            paddingTop: '20px',
-          }}
-        >
-          <div
-            style={{
-              fontSize: '13rem',
-              lineHeight: '100%',
-              letterSpacing: '0px',
-            }}
-          >
-            © 2025
-          </div>
+        <div className={styles.section_footer_wrapper_bottom}>
+          <div className={styles.section_footer_year_production}>© 2025</div>
           <div style={{ display: 'flex', gap: '20px' }}>
-            <div
-              style={{
-                fontSize: '13rem',
-                lineHeight: '100%',
-                letterSpacing: '0px',
-              }}
-            >
+            <div className={styles.section_footer_year_production}>
               Лачуга.Практикум
             </div>
             <a
-              style={{
-                textDecoration: 'none',
-                color: '#000000',
-                fontSize: '13rem',
-                lineHeight: '100%',
-                letterSpacing: '0px',
-              }}
+              className={styles.section_footer_a}
               target='_blank'
+              rel='noopener noreferrer'
               href='https://github.com/Rogepta'
             >
               GitHub
