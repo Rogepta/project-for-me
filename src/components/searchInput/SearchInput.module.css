@@ -1,8 +1,31 @@
 .input {
-  width: 100%;
+  flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 0;
   font-size: 16px;
   box-sizing: border-box;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.button {
+  padding: 8px 11px;
+  color: #ffffff;
+  font-size: 11rem;
+  line-height: 18rem;
+  letter-spacing: 0px;
+  background-color: #3456f3;
+  border-radius: 48px;
+}
+.divider {
+  height: 1px;
+  background-color: #e8e8e8;
+  margin-top: 10px; 
+  width: 100%; 
 }
