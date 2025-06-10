@@ -1,22 +1,26 @@
 import styles from './HeaderAUTH.module.css';
 import ILogo from '../../assets/icons/logo.png';
 import authProfile from '../../assets/icons/profile.png';
+import Container from '../shared/Container';
+import { Link } from 'react-router-dom';
 
-export const HeaderAUTH = () => {
+const HeaderAUTH = () => {
   return (
-    <div>
+    <Container>
       <div className={styles.wrapper}>
-        <a href='#'>
+        <Link to='/'>
           <img src={ILogo} alt='logo' />
-        </a>
+        </Link>
         <div className={styles.films_wrapper}>
-          <a href='#'>Фильмы</a>
-          <a href='#'>Сохраненные фильмы</a>
+          <Link to='/films'>Фильмы</Link>
+          <Link to='/saved-films'>Сохраненные фильмы</Link>
         </div>
-        <a href='#'>
+        <Link to='/edit'>
           <img src={authProfile} alt='logo' />
-        </a>
+        </Link>
       </div>
-    </div>
+    </Container>
   );
 };
+
+export default HeaderAUTH;

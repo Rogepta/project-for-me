@@ -1,24 +1,18 @@
-// import { HeaderAUTH } from './components/HeaderAUTH/HeaderAUTH';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import AboutProject from './sections/section-about-project/SectionAboutProject';
-import { HeaderNotAuth } from './components/HeaderNotAuth/HeaderNotAuth';
-import Introduce from './sections/section-Introduce/SectionIntroduce';
-import SectionTechnologies from './sections/section-technologies/SectionTechnologies';
-import SectionAboutDeveloper from './sections/section-about-developer/SectionAboutDeveloper';
-import SectionFooter from './sections/section-footer/SectionFooter';
 
-function App() {
+import Home from './pages/Home';
+import Films from './pages/Films';
+
+const App: React.FC = () => {
   return (
-    <>
-      {/* <HeaderAUTH /> */}
-      <HeaderNotAuth />
-      <Introduce />
-      <AboutProject />
-      <SectionTechnologies />
-      <SectionAboutDeveloper />
-      <SectionFooter />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/films' element={<Films />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
