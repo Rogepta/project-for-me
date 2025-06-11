@@ -2,6 +2,7 @@ import Section from '../section/Section';
 import FilmCard from '../FilmCard/FilmCard';
 import React, { useEffect, useState } from 'react';
 import { films } from './ListOfFilms.const';
+import styles from './ListOfFilms.module.css';
 
 interface IListOfFilms {
   searchTerm: string;
@@ -10,6 +11,7 @@ interface IListOfFilms {
 const ListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
   const [favorites, setFavorites] = useState<string[]>([]);
   const [displayedFilms, setDisplayedFilms] = useState(films);
+  const [visibleCount, setVisibleCount] = useState(16);
 
   useEffect(() => {
     const savedFavorites = JSON.parse(
@@ -37,6 +39,8 @@ const ListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
     });
   };
 
+  const handleShowMore = () => [setVisibleCount((prevCount) => prevCount + 16)];
+
   return (
     <Section colorType='ultralight' paddingSizeType='sm'>
       <div
@@ -46,7 +50,7 @@ const ListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
           flexWrap: 'wrap',
         }}
       >
-        {displayedFilms.map((film) => (
+        {displayedFilms.slice(0, visibleCount).map((film) => (
           <FilmCard
             imageUrl={film.imageUrl}
             title={film.title}
@@ -56,6 +60,13 @@ const ListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
           />
         ))}
       </div>
+      {visibleCount < displayedFilms.length && (
+        <div className={styles.button}>
+          <button type='button' onClick={handleShowMore} style={{justifyContent: 'center'}}>
+            Еще
+          </button>
+        </div>
+      )}
     </Section>
   );
 };
