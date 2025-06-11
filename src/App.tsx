@@ -3,6 +3,7 @@ import './App.css';
 
 import HomePage from './pages/HomePage';
 import FilmsPage from './pages/FilmsPage';
+import { SavedFilmPage } from './pages/SavedFilmPage';
 
 const App: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/films' element={<FilmsPage />} />
+        <Route path='/saved-films' element={<SavedFilmPage />} />
       </Routes>
     </Router>
   );
