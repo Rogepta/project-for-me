@@ -1,10 +1,15 @@
 import Section from '../section/Section';
 import FilmCard from '../FilmCard/FilmCard';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { films } from './ListOfFilms.const';
 
-const ListOfFilms = () => {
+interface IListOfFilms {
+  searchTerm: string;
+}
+
+const ListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [displayedFilms, setDisplayedFilms] = useState(films);
 
   useEffect(() => {
     const savedFavorites = JSON.parse(
@@ -12,6 +17,14 @@ const ListOfFilms = () => {
     );
     setFavorites(savedFavorites);
   }, []);
+
+  useEffect(() => {
+    const filteredMovies = films.filter((film) =>
+      film.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setDisplayedFilms(filteredMovies.length > 0 ? filteredMovies : []);
+  }, [searchTerm]);
 
   const handleFavoriteTogle = (title: string) => {
     setFavorites((prevFavorites) => {
@@ -33,7 +46,7 @@ const ListOfFilms = () => {
           flexWrap: 'wrap',
         }}
       >
-        {films.map((film) => (
+        {displayedFilms.map((film) => (
           <FilmCard
             imageUrl={film.imageUrl}
             title={film.title}

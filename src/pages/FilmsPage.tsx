@@ -3,8 +3,9 @@ import HeaderAUTH from '../components/HeaderAUTH/HeaderAUTH';
 import SearchInput from '../components/searchInput/SearchInput';
 import Section from '../components/section/Section';
 import ListOfFilms from '../components/ListOfFilms/ListOfFilms';
+import SectionFooter from '../sections/section-footer/SectionFooter';
 
-const Films: React.FC = () => {
+const FilmsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,10 +25,11 @@ const Films: React.FC = () => {
           onChange={handleSearchChange}
           onSearch={handleSearchClick}
         />
-        <ListOfFilms />
+        <ListOfFilms searchTerm={searchTerm} />
       </Section>
+      <SectionFooter />
     </>
   );
 };
 
-export default Films;
+export default FilmsPage;

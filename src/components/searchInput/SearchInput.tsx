@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './SearchInput.module.css';
-import Container from '../shared/Container';
 
 interface ISearchInputProps {
   value: string;
@@ -14,7 +13,7 @@ const SearchInput: React.FC<ISearchInputProps> = ({
   onSearch,
 }) => {
   return (
-    <Container>
+    <>
       <div className={styles.inputContainer}>
         <input
           className={styles.input}
@@ -28,7 +27,7 @@ const SearchInput: React.FC<ISearchInputProps> = ({
         </button>
       </div>
       <div className={styles.divider} />
-    </Container>
+    </>
   );
 };
 
