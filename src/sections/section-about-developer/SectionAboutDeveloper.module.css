@@ -1,8 +1,10 @@
+
 .section_about_developer_container {
   display: flex;
   gap: 270px;
   padding-bottom: 100px;
 }
+
 
 .section_about_developer_h3 {
   font-size: 50px;
@@ -12,6 +14,7 @@
   margin-bottom: 18px;
 }
 
+
 .section_about_developer_h4 {
   font-size: 18rem;
   line-height: 20rem;
@@ -20,6 +23,7 @@
   margin-bottom: 26px;
   font-weight: 500;
 }
+
 
 .section_about_developer_p {
   font-size: 14rem;
