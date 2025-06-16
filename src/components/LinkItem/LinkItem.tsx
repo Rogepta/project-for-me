@@ -1,5 +1,6 @@
 import React from 'react';
-import Icon_arrow from '../../assets/icons/Icon_arrow.svg';
+import IconArrow from '../icons/IconArrow';
+import styles from './LinkItem.module.css';
 
 interface IProps {
   href: string;
@@ -10,36 +11,14 @@ const LinkItem: React.FC<IProps> = ({ href, text }) => {
   return (
     <div>
       <a
-        style={{
-          textDecoration: 'none',
-          color: '#000000',
-        }}
+        className={styles.link_item_a}
         href={href}
         target='_blank'
         rel='noopener noreferrer'
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            borderBottom: '1rem solid #E8E8E8',
-            paddingBottom: '19px',
-            paddingTop: '19px',
-          }}
-        >
-          <div
-            style={{
-              fontSize: '30rem',
-              lineHeight: '50px',
-              letterSpacing: '-4%',
-            }}
-          >
-            {text}
-          </div>
-          <div>
-            <img src={Icon_arrow} alt='Icon_arrow' />
-          </div>
+        <div className={styles.link_item_text_arrow}>
+          <div className={styles.link_item_text}>{text}</div>
+          <IconArrow />
         </div>
       </a>
     </div>

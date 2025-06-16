@@ -20,6 +20,11 @@
   line-height: 20rem;
   letter-spacing: 0%;
 }
+.section_about_project_container_box {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 14px 0;
+}
 
 .box {
   display: flex;

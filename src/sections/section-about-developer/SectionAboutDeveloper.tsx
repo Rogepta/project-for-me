@@ -1,7 +1,7 @@
-import Section from '../../components/section/Section';
+import Section from '@components/section/Section';
 import styles from './SectionAboutDeveloper.module.css';
 import me from '../../assets/photo/me.jpg';
-import LinkItem from '../../components/LinkItem/LinkItem';
+import LinkItem from '@components/LinkItem/LinkItem';
 
 export default function SectionAboutDeveloper() {
   const linkItems = [
@@ -19,7 +19,7 @@ export default function SectionAboutDeveloper() {
         marginBottom: '70px',
       }}
     >
-      <div style={{ display: 'flex', gap: '270px', paddingBottom: '100px' }}>
+      <div className={styles.section_about_developer_container}>
         <div>
           <h3 className={styles.section_about_developer_h3}>Даниил</h3>
           <h4 className={styles.section_about_developer_h4}>
@@ -32,16 +32,14 @@ export default function SectionAboutDeveloper() {
             увидеть результат. Занимаюсь спортом, хочу купить квартиру и
             пожениться.
           </p>
-          <div>
-            <a
-              style={{ textDecoration: 'none', color: '#000000' }}
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://github.com/Rogepta'
-            >
-              GitHub
-            </a>
-          </div>
+          <a
+            className={styles.section_about_deceloper_a}
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://github.com/Rogepta'
+          >
+            GitHub
+          </a>
         </div>
         <div>
           <img className={styles.image} src={me} alt='frontend-developer' />

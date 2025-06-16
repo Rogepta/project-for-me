@@ -18,7 +18,11 @@
   letter-spacing: -4%;
   color: #000000;
 }
-
+.section_technologies_technologies {
+  display: flex;
+  justify-content: center;
+  gap: 10p;
+}
 .technology {
   padding: 22px 21px;
   background-color: #e8e8e8;
