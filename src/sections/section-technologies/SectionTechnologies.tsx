@@ -1,4 +1,4 @@
-import Section from '../../components/section/Section';
+import Section from '@components/section/Section';
 import styles from './SectionTechnologies.module.css';
 
 const technologies = [
@@ -29,7 +29,7 @@ export default function SectionTechnologies() {
           </p>
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+      <div className={styles.section_technologies_technologies}>
         {technologies.map((technology, key) => (
           <div key={key} className={styles.technology}>
             {technology}

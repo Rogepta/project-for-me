@@ -1,22 +1,19 @@
 import React from 'react';
-import HeaderAUTH from '../components/HeaderAUTH/HeaderAUTH';
-import AboutProject from '../sections/section-about-project/SectionAboutProject';
-import Introduce from '../sections/section-Introduce/SectionIntroduce';
-import SectionTechnologies from '../sections/section-technologies/SectionTechnologies';
-import SectionAboutDeveloper from '../sections/section-about-developer/SectionAboutDeveloper';
-import SectionFooter from '../sections/section-footer/SectionFooter';
+import SectionAboutProject from '@sections/section-about-project/SectionAboutProject';
+import SectionIntroduce from '@sections/section-Introduce/SectionIntroduce';
+import SectionTechnologies from '@sections/section-technologies/SectionTechnologies';
+import SectionAboutDeveloper from '@sections/section-about-developer/SectionAboutDeveloper';
+import { MainLayout } from '@components/shared/MainLayout/MainLayout';
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
-    <>
-      <HeaderAUTH />
-      <Introduce />
-      <AboutProject />
+    <MainLayout>
+      <SectionIntroduce />
+      <SectionAboutProject />
       <SectionTechnologies />
       <SectionAboutDeveloper />
-      <SectionFooter />
-    </>
+    </MainLayout>
   );
 };
 
-export default Home;
+export default HomePage;

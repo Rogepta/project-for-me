@@ -1,5 +1,4 @@
 .container {
-  /* border: 1px solid #000; */
   max-width: 270px;
   box-sizing: content-box;
   padding-top: 40px;
@@ -8,11 +7,17 @@
   padding-bottom: 14px;
 }
 
-.film_p {
+.film_title {
   font-weight: 500;
   font-size: 13rem;
   line-height: 100%;
   letter-spacing: 0px;
+}
+
+.film_title_bookmark {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
 }
 
 .divider {

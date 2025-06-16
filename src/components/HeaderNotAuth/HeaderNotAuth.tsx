@@ -1,14 +1,14 @@
 import styles from './HeaderNotAuth.module.css';
-import ILogo from '../../assets/icons/logo.png';
 import Container from '../shared/Container';
 import ResizeBlock from '../buttonResize/ResizeBlock';
+import IconLogo from '../icons/IconLogo';
 
 export const HeaderNotAuth = () => {
   return (
     <Container>
       <header className={styles.header}>
         <a href='#'>
-          <img src={ILogo} alt='logo' />
+          <IconLogo />
         </a>
 
         <div className={styles.registr_enter}>

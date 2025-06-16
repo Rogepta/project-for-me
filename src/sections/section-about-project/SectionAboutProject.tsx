@@ -1,7 +1,7 @@
-import Section from '../../components/section/Section';
+import Section from '@components/section/Section';
 import styles from './SectionAboutProject.module.css';
 
-const AboutProject = () => {
+const SectionAboutProject = () => {
   const customStylesForBox = {
     color: '#A0A0A0',
     fontSize: '14rem',
@@ -40,13 +40,7 @@ const AboutProject = () => {
           </p>
         </div>
       </div>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr',
-          gap: '14px 0',
-        }}
-      >
+      <div className={styles.section_about_project_container_box}>
         <div
           className={styles.box}
           style={{
@@ -77,4 +71,4 @@ const AboutProject = () => {
   );
 };
 
-export default AboutProject;
+export default SectionAboutProject;

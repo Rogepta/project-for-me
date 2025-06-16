@@ -1,0 +1,19 @@
+.link_item_a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.link_item_text_arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rem solid #e8e8e8;
+  padding-bottom: 19px;
+  padding-top: 19px;
+}
+
+.link_item_text {
+  font-size: 30rem;
+  line-height: 50px;
+  letter-spacing: -4%;
+}

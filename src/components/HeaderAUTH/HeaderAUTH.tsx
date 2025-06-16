@@ -1,15 +1,15 @@
 import styles from './HeaderAUTH.module.css';
-import ILogo from '../../assets/icons/logo.png';
 import authProfile from '../../assets/icons/profile.png';
 import Container from '../shared/Container';
 import { Link } from 'react-router-dom';
+import IconLogo from '../icons/IconLogo';
 
 const HeaderAUTH = () => {
   return (
     <Container>
       <div className={styles.wrapper}>
         <Link to='/'>
-          <img src={ILogo} alt='logo' />
+          <IconLogo/>
         </Link>
         <div className={styles.films_wrapper}>
           <Link to='/films'>Фильмы</Link>

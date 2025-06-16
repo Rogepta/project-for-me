@@ -1,4 +1,4 @@
-import Section from '../../components/section/Section';
+import Section from '@components/section/Section';
 import styles from './SectionFooter.module.css';
 
 export default function SectionFooter() {
@@ -10,7 +10,7 @@ export default function SectionFooter() {
         </p>
         <div className={styles.section_footer_wrapper_bottom}>
           <div className={styles.section_footer_year_production}>© 2025</div>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div className={styles.section_footer_container_title_a}>
             <div className={styles.section_footer_year_production}>
               Лачуга.Практикум
             </div>

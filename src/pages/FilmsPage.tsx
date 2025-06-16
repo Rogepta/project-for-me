@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import HeaderAUTH from '../components/HeaderAUTH/HeaderAUTH';
-import SearchInput from '../components/searchInput/SearchInput';
-import Section from '../components/section/Section';
-import ListOfFilms from '../components/ListOfFilms/ListOfFilms';
-import SectionFooter from '../sections/section-footer/SectionFooter';
+import SearchInput from '@components/group/searchInput/SearchInput';
+import Section from '@components/section/Section';
+import SectionListOfFilms from '@sections/section-list-of-films/SectionListOfFilms';
+import { MainLayout } from '@components/shared/MainLayout/MainLayout';
 
 const FilmsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,18 +16,16 @@ const FilmsPage: React.FC = () => {
   };
 
   return (
-    <>
-      <HeaderAUTH />
+    <MainLayout>
       <Section colorType='ultralight' paddingSizeType='lg'>
         <SearchInput
           value={searchTerm}
           onChange={handleSearchChange}
           onSearch={handleSearchClick}
         />
-        <ListOfFilms searchTerm={searchTerm} />
+        <SectionListOfFilms searchTerm={searchTerm} />
       </Section>
-      <SectionFooter />
-    </>
+    </MainLayout>
   );
 };
 

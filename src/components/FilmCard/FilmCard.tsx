@@ -1,6 +1,6 @@
 import styles from './FilmCard.module.css';
-import ITransparentLike from '../../assets/icons/transparent_like.svg';
-import IFilledLike from '../../assets/icons/IFilledLike.svg';
+import IconTransparentLike from '../icons/IconTransparentLike';
+import IconIFilledLike from '../icons/IconIFilledLike';
 
 interface IFilmCardProps {
   imageUrl: string;
@@ -20,16 +20,10 @@ const FilmCard: React.FC<IFilmCardProps> = ({
   return (
     <div className={styles.container}>
       <img className={styles.film_img} src={imageUrl} alt='момент из фильма' />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          paddingBottom: '25px',
-        }}
-      >
-        <p className={styles.film_p}>{title}</p>
+      <div className={styles.film_title_bookmark}>
+        <p className={styles.film_title}>{title}</p>
         <button onClick={() => onFavoriteToggle(title)}>
-          <img src={isFavorite ? IFilledLike : ITransparentLike} />
+          {isFavorite ? <IconIFilledLike /> : <IconTransparentLike />}
         </button>
       </div>
       <div className={styles.divider} />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import HeaderAUTH from '../components/HeaderAUTH/HeaderAUTH';
-import Section from '../components/section/Section';
+import Section from '@components/section/Section';
+import { MainLayout } from '@components/shared/MainLayout/MainLayout';
 
 export const SavedFilmPage: React.FC = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -14,16 +14,19 @@ export const SavedFilmPage: React.FC = () => {
 
   return (
     <>
-      <HeaderAUTH />
-      <Section colorType='ultralight' paddingSizeType='sm'>
-        {favorites.length === 0 ? (<p>У вас нет сохраненных фильмов</p>) : (
-         <ul>
-            {favorites.map((film, index) => (
-               <li key={index}>{film}</li>
-            ))}
-         </ul>
-        )}
-      </Section>
+      <MainLayout>
+        <Section colorType='ultralight' paddingSizeType='sm'>
+          {favorites.length === 0 ? (
+            <p>У вас нет сохраненных фильмов</p>
+          ) : (
+            <ul>
+              {favorites.map((film, index) => (
+                <li key={index}>{film}</li>
+              ))}
+            </ul>
+          )}
+        </Section>
+      </MainLayout>
     </>
   );
 };

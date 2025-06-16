@@ -1,8 +1,8 @@
 import text__COLOR_landing from '../../assets/icons/text__COLOR_landing-logo.png';
-import Section from '../../components/section/Section';
+import Section from '@components/section/Section';
 import styles from './SectionIntroduce.module.css';
 
-export default function Introduce() {
+export default function SectionIntroduce() {
   return (
     <Section colorType='dark' paddingSizeType='sm'>
       <div className={styles.section__content}>
