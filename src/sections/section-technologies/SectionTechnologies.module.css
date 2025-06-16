@@ -21,7 +21,7 @@
 .section_technologies_technologies {
   display: flex;
   justify-content: center;
-  gap: 10p;
+  gap: 10px;
 }
 .technology {
   padding: 22px 21px;

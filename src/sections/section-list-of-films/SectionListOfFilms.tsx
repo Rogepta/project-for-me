@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleFavorite } from '../../features/favorites/favoriteSlice';
+import {
+  toggleFavorite,
+  type IFilm,
+} from '../../features/favorites/favoriteSlice';
 
 import Section from '../../components/section/Section';
 import FilmCard from '../../components/FilmCard/FilmCard';
-import { films } from './SectionListOfFilms.const';
 import styles from './SectionListOfFilms.module.css';
 import type { RootState } from 'store/types/types';
 
@@ -18,18 +20,33 @@ const SectionListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
     (state: RootState) => state.favorites.favorites
   );
 
-  const [displayedFilms, setDisplayedFilms] = useState(films);
+  const [filmsFrom, setFilmsFrom] = useState<IFilm[]>([]);
+  const [displayedFilms, setDisplayedFilms] = useState(filmsFrom);
+  console.log(filmsFrom);
   const [visibleCount, setVisibleCount] = useState(16);
 
   useEffect(() => {
-    const filteredMovies = films.filter((film) =>
+    const fetchFilms = async () => {
+      const response = await fetch('http://localhost:3000/films');
+      if (!response.ok) {
+        console.error('Ошибка при получении данных');
+        return;
+      }
+      const data: IFilm[] = await response.json();
+      setFilmsFrom(data);
+    };
+    fetchFilms();
+  }, []);
+
+  useEffect(() => {
+    const filteredMovies = filmsFrom.filter((film) =>
       film.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setDisplayedFilms(filteredMovies.length > 0 ? filteredMovies : []);
-  }, [searchTerm]);
+  }, [filmsFrom, searchTerm]);
 
-  const handleShowMore = () => [setVisibleCount((prevCount) => prevCount + 16)];
+  const handleShowMore = () => setVisibleCount((prevCount) => prevCount + 16);
 
   return (
     <Section colorType='ultralight' paddingSizeType='sm'>

@@ -17,14 +17,14 @@ const FilmsPage: React.FC = () => {
 
   return (
     <MainLayout>
-      <Section colorType='ultralight' paddingSizeType='lg'>
-        <SearchInput
-          value={searchTerm}
-          onChange={handleSearchChange}
-          onSearch={handleSearchClick}
-        />
-        <SectionListOfFilms searchTerm={searchTerm} />
-      </Section>
+        <Section colorType='ultralight' paddingSizeType='lg'>
+          <SearchInput
+            value={searchTerm}
+            onChange={handleSearchChange}
+            onSearch={handleSearchClick}
+          />
+          <SectionListOfFilms searchTerm={searchTerm} />
+        </Section>
     </MainLayout>
   );
 };

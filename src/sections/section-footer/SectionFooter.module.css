@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  grid-row: 2;
 }
 
 .section_footer_year_production {
@@ -21,7 +22,7 @@
 
 .section_footer_container_title_a {
   display: flex;
-  gap: 20p;
+  gap: 20px;
 }
 
 .section_footer_a {
