@@ -3,7 +3,7 @@ import './App.css';
 
 import HomePage from './pages/HomePage';
 import FilmsPage from './pages/FilmsPage';
-import { SavedFilmPage } from './pages/SavedFilmPage';
+import { SavedFilmPage } from './pages/SavedFilmPage/SavedFilmPage';
 
 const App: React.FC = () => {
   return (
