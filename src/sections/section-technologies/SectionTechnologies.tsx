@@ -8,7 +8,7 @@ const technologies = [
   'React',
   'Git',
   'Nest.js',
-  'mongoDB',
+  'PostgreSQL',
 ];
 
 export default function SectionTechnologies() {

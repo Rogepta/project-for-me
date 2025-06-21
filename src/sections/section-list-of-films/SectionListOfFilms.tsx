@@ -9,6 +9,7 @@ import Section from '../../components/section/Section';
 import FilmCard from '../../components/FilmCard/FilmCard';
 import styles from './SectionListOfFilms.module.css';
 import type { RootState } from 'store/types/types';
+import axios from 'axios';
 
 interface IListOfFilms {
   searchTerm: string;
@@ -27,14 +28,16 @@ const SectionListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
 
   useEffect(() => {
     const fetchFilms = async () => {
-      const response = await fetch('http://localhost:3000/films');
-      if (!response.ok) {
-        console.error('Ошибка при получении данных');
-        return;
+      try {
+        const response = await axios.get<IFilm[]>(
+          'http://localhost:3000/films'
+        );
+        setFilmsFrom(response.data);
+      } catch (error) {
+        console.error('Ошибка при получении данных', error);
       }
-      const data: IFilm[] = await response.json();
-      setFilmsFrom(data);
     };
+
     fetchFilms();
   }, []);
 
