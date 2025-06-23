@@ -23,7 +23,6 @@ const SectionListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
 
   const [filmsFrom, setFilmsFrom] = useState<IFilm[]>([]);
   const [displayedFilms, setDisplayedFilms] = useState(filmsFrom);
-  console.log(filmsFrom);
   const [visibleCount, setVisibleCount] = useState(16);
 
   useEffect(() => {

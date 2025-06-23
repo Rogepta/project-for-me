@@ -4,7 +4,7 @@ import AuthContainer from '@components/shared/AuthContainer/AuthContainer';
 import styles from './Registration.module.css';
 import React from 'react';
 
-const Registration: React.FC = () => {
+const RegistrationPage: React.FC = () => {
   return (
     <AuthContainer>
       <div className={styles.wrapper}>
@@ -17,4 +17,4 @@ const Registration: React.FC = () => {
   );
 };
 
-export default Registration;
+export default RegistrationPage;
