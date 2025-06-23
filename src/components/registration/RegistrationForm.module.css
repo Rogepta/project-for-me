@@ -1,47 +1,90 @@
 .form {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0;
   display: flex;
-  flex-direction: column; /* Вытягивание элементов по вертикали */
-  max-width: 400px; /* Максимальная ширина формы */
-  margin: auto; /* Автоматический отступ по горизонтали */
-  padding: 20px; /* Отступы вокруг формы */
-  border: 1px solid #ccc; /* Рамка формы */
-  border-radius: 5px; /* Скругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень формы */
+  flex-direction: column;
 }
 
-label {
-  margin-bottom: 5px; /* Небольшой отступ снизу */
-  font-weight: bold; /* Жирный текст */
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: white;
 }
 
-input {
-  padding: 10px; /* Отступы внутри поля ввода */
-  border: 1px solid #ccc; /* Рамка поля ввода */
-  border-radius: 4px; /* Скругление углов полей */
-  margin-bottom: 15px; /* Отступ между полями ввода */
-  outline: none; /* Убираем обводку при фокусе */
-  transition: border-color 0.3s; /* Плавный переход цвета рамки */
+.label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 6px;
+  color: #a0a0a0;
+  text-align: start;
 }
 
-.form input:focus {
-  border-color: #007bff; /* Цвет рамки при фокусе */
+.input {
+  border: none;
+  border-radius: 8px;
+  border-bottom: 2px solid #c7c7c7;
+  outline: none;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s;
 }
 
-.form span {
-  color: red; /* Цвет сообщений об ошибках */
-  font-size: 0.8em; /* Размер текста сообщений об ошибках */
+.input:focus {
+  border-bottom-color: #4caf50;
 }
 
-.form button {
-  padding: 10px; /* Отступы внутри кнопки */
-  background-color: #007bff; /* Фоновый цвет кнопки */
-  color: white; /* Цвет текста кнопки */
-  border: none; /* Убираем рамку кнопки */
-  border-radius: 4px; /* Скругленные углы кнопки */
-  cursor: pointer; /* Курсор при наведении на кнопку */
-  transition: background-color 0.3s; /* Плавный переход фона при наведении */
+.errorInput {
+  border-bottom-color: #e3334f !important;
 }
 
-.form button:hover {
-  background-color: #0056b3; /* Цвет кнопки при наведении */
+.errorText {
+  color: #e3334f;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.errorMessage {
+  color: #e3334f;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.submitButton {
+  background-color: #5243d5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 40px;
+  margin-bottom: 14px;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #3e2db0;
+}
+
+.loginPrompt {
+  font-size: 13px;
+  color: #8b8b8b;
+  text-align: center;
+}
+
+.loginLink {
+  color: #5243d5;
+  text-decoration: none;
+  cursor: pointer;
+}
+.loginLink:hover {
+  text-decoration: underline;
 }

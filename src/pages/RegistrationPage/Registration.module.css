@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-top: 3px solid #3f51b5; 
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+h2 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.loginText {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.loginText a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.loginText a:hover {
+  text-decoration: underline;
+}

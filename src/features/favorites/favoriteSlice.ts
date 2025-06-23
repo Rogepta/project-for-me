@@ -19,14 +19,12 @@ const favoritesSlice = createSlice({
    initialState,
    reducers: {
       toggleFavorite(state, action: PayloadAction<IFilm>) {
-         const film: IFilm = action.payload; // Получаем фильм из действия
-         const existingFilm = state.favorites.find((f) => f.title === film.title); // Проверяем, есть ли он в избранном
+         const film: IFilm = action.payload;
+         const existingFilm = state.favorites.find((f) => f.title === film.title);
 
          if (existingFilm) {
-            // Если фильм уже есть в избранном, убираем его
             state.favorites = state.favorites.filter((f) => f.title !== film.title);
          } else {
-            // Если фильма нет, добавляем его в избранное
             state.favorites.push(film);
          }
          localStorage.setItem('favorites', JSON.stringify(state.favorites));
@@ -35,5 +33,5 @@ const favoritesSlice = createSlice({
 }
 )
 
-export const { toggleFavorite } = favoritesSlice.actions; // Экспортируем действие для использования в компонентах
-export default favoritesSlice.reducer; // Экспортируем редюсер
+export const { toggleFavorite } = favoritesSlice.actions;
+export default favoritesSlice.reducer; 
