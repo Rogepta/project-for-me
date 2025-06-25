@@ -110,7 +110,7 @@ export const RegistrationForm: React.FC<{
 
           <div className={styles.loginPrompt}>
             Уже зарегистрированы?{' '}
-            <a href='/login' className={styles.loginLink}>
+            <a href='/authorization' className={styles.loginLink}>
               Войти
             </a>
           </div>
