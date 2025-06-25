@@ -2,6 +2,7 @@ import api from '../../api/api';
 import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import styles from './AuthorizationForm.module.css';
+import { useNavigate } from 'react-router-dom';
 
 interface FormValues {
   email: string;
@@ -9,6 +10,7 @@ interface FormValues {
 }
 
 const AuthorizationForm = () => {
+  const navigate = useNavigate();
   // Определение схемы валидации с Yup
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -36,7 +38,7 @@ const AuthorizationForm = () => {
 
       // Сохранение токена в localStorage
       localStorage.setItem('token', res.data.access_token);
-      window.location.href = '/';
+      navigate('/');
     } catch (error) {
       if (error instanceof Error) {
         setErrors({ email: 'Неправильный email или пароль' }); // Настройка ошибки
