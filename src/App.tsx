@@ -5,6 +5,7 @@ import FilmsPage from './pages/FilmsPage';
 import { SavedFilmPage } from './pages/SavedFilmPage/SavedFilmPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import { WelcomePage } from './pages/WelcomePage/WelcomePage';
+import { LoginPage } from './pages/LoginPage';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path='/saved-films' element={<SavedFilmPage />} />
         <Route path='/registration' element={<RegistrationPage />} />
         <Route path='/welcome-page' element={<WelcomePage />} />
+        <Route path='/authorization' element={<LoginPage />} />
       </Routes>
     </Router>
   );
