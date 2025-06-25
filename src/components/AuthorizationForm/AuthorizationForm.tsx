@@ -2,7 +2,6 @@ import api from '../../api/api';
 import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import styles from './AuthorizationForm.module.css';
-import { useState } from 'react';
 
 interface FormValues {
   email: string;
@@ -81,6 +80,12 @@ const AuthorizationForm = () => {
           >
             Войти
           </button>
+          <div className={styles.loginPrompt}>
+            Еще не зарегистрированы?{' '}
+            <a href='/registration' className={styles.loginLink}>
+              Зарегистрироваться
+            </a>
+          </div>
         </Form>
       )}
     </Formik>
