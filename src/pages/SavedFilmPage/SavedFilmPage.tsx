@@ -17,22 +17,22 @@ export const SavedFilmPage: React.FC = () => {
   return (
     <>
       <MainLayout>
-          <Section colorType='ultralight' paddingSizeType='sm'>
-            {favorites.length === 0 ? (
-              <p>У вас нет сохраненных фильмов</p>
-            ) : (
-              <div className={styles.container}>
-                {favorites.map((film) => (
-                  <FilmCard
-                    key={film.title}
-                    {...film}
-                    isFavorite={true}
-                    onFavoriteToggle={() => dispatch(toggleFavorite(film))}
-                  />
-                ))}
-              </div>
-            )}
-          </Section>
+        <Section colorType='ultralight' paddingSizeType='sm'>
+          {favorites.length === 0 ? (
+            <p>У вас нет сохраненных фильмов</p>
+          ) : (
+            <div className={styles.container}>
+              {favorites.map((film) => (
+                <FilmCard
+                  key={film.title}
+                  film={film}
+                  isFavorite={true}
+                  onFavoriteToggle={() => dispatch(toggleFavorite(film))}
+                />
+              ))}
+            </div>
+          )}
+        </Section>
       </MainLayout>
     </>
   );

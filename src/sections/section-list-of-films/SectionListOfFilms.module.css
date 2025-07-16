@@ -29,3 +29,10 @@
 .button button:hover {
   background-color: #f7f3f3;
 }
+
+.loader {
+  text-align: center;
+  font-size: 18px;
+  color: #5243d5;
+  margin-top: 20px;
+}

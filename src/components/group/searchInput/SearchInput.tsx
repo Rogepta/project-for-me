@@ -10,7 +10,7 @@ interface ISearchInputProps {
 const SearchInput: React.FC<ISearchInputProps> = ({
   value,
   onChange,
-  onSearch,
+  // onSearch,
 }) => {
   return (
     <>
@@ -22,9 +22,9 @@ const SearchInput: React.FC<ISearchInputProps> = ({
           value={value}
           onChange={onChange}
         />
-        <button className={styles.button} onClick={onSearch}>
+        {/* <button className={styles.button} onClick={onSearch}>
           Найти
-        </button>
+        </button> */}
       </div>
       <div className={styles.divider} />
     </>

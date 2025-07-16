@@ -23,11 +23,12 @@ const SectionListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
 
   const [filmsFrom, setFilmsFrom] = useState<IFilm[]>([]);
   const [displayedFilms, setDisplayedFilms] = useState(filmsFrom);
-  console.log(filmsFrom);
   const [visibleCount, setVisibleCount] = useState(16);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchFilms = async () => {
+      setIsLoading(true);
       try {
         const response = await axios.get<IFilm[]>(
           'http://localhost:3000/films'
@@ -35,6 +36,8 @@ const SectionListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
         setFilmsFrom(response.data);
       } catch (error) {
         console.error('Ошибка при получении данных', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -51,19 +54,27 @@ const SectionListOfFilms: React.FC<IListOfFilms> = ({ searchTerm }) => {
 
   const handleShowMore = () => setVisibleCount((prevCount) => prevCount + 16);
 
+  if (isLoading) return <div>Загрузка...</div>;
+
   return (
     <Section colorType='ultralight' paddingSizeType='sm'>
       <div className={styles.container}>
-        {displayedFilms.slice(0, visibleCount).map((film) => (
-          <FilmCard
-            key={film.title}
-            {...film}
-            isFavorite={favorites.some((f) => f.title === film.title)}
-            onFavoriteToggle={() => dispatch(toggleFavorite(film))}
-          />
-        ))}
+        {isLoading ? (
+          <div className={styles.loader}>Загрузка...</div>
+        ) : (
+          displayedFilms
+            .slice(0, visibleCount)
+            .map((film) => (
+              <FilmCard
+                key={film.title}
+                film={film}
+                isFavorite={favorites.some((f) => f.title === film.title)}
+                onFavoriteToggle={() => dispatch(toggleFavorite(film))}
+              />
+            ))
+        )}
       </div>
-      {visibleCount < displayedFilms.length && (
+      {visibleCount < displayedFilms.length && !isLoading && (
         <div className={styles.button}>
           <button type='button' onClick={handleShowMore}>
             Еще
